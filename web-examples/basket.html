@@ -2,10 +2,28 @@
 <head>
   <title>Basket Example</title>
   <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="nav.css" type="text/css">
   <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
 </head>
+<nav>
+  <ul>
+      <li><a href="./cloud/index.html">Hover Button</a></li>
+      <li><a href="./mario-examples/index.html">Mario Kart</a></li>
+      <li><a href="./web-examples/pop-up.html">Pop up!</a></li>
+      <li><a href="./rotate-examples/panels.html">Pick a Card</a></li>
+  </ul>
+</nav>
 <body class="basket">
   <header>
+      <nav>
+    <ul>
+        <li><a href="./cloud/index.html">Hover Button</a></li>
+        <li><a href="./mario-examples/index.html">Mario Kart</a></li>
+        <li><a href="./web-examples/pop-up.html">Pop up!</a></li>
+        <li><a href="./web-examples/basket.html">Shopping Cart</a></li>
+        <li><a href="./rotate-examples/panels.html">Pick a Card</a></li>
+    </ul>
+</nav>
     <h1>Sports Clothing</h1>
     <div class="basket-icon"><img src="img/basket.png"></div>
   </header>
@@ -42,6 +60,15 @@
     </li>
   </ul>
   <script>
-    
+    $("button").on("click", function() {
+      $(this).closest("li")
+      .find("img")
+      .clone()
+      .addClass("zoom")
+      .appendTo("body");
+    setTimeout(function(){
+      $(".zoom").remove();
+    }, 1000);
+  });
   </script>
 </body>
